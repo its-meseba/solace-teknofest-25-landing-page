@@ -16,7 +16,6 @@ import {
     Shield,
     Users,
 } from "lucide-react";
-import { usePageViewAnalytics } from "@/hooks/usePageViewAnalytics";
 import { cn } from "@/lib/utils";
 import { Button } from "@/registry/new-york-v4/ui/button";
 import { Card, CardContent } from "@/registry/new-york-v4/ui/card";
@@ -47,13 +46,6 @@ const BRAND_COLORS = {
 
 export function AboutUsContent() {
     // Initialize analytics tracking for this page
-    usePageViewAnalytics({
-        pageName: "About Us",
-        pageCategory: "company",
-        additionalParams: {
-            page_section: "about",
-        },
-    });
 
     const heroRef = useRef<HTMLDivElement>(null);
     const visionRef = useRef<HTMLDivElement>(null);
