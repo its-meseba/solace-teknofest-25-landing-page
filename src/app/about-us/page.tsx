@@ -5,7 +5,7 @@ import { AboutUsContent } from "@/components/pages/about-us/AboutUsContent";
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://solace.com.tr";
 
 // Define brand colors for use in styling - adding highlight property to match component requirements
-export const BRAND_COLORS = {
+const BRAND_COLORS = {
     primary: "#2f318b", // Deep purple
     secondary: "#4da9e7", // Light blue
     accent: "#f5f5f5", // Light gray for backgrounds
