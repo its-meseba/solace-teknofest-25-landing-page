@@ -10,8 +10,10 @@ const ProductFeature = ({
     className?: string;
 }) => (
     <div className={`flex items-center mt-3 sm:mt-4 space-x-2 ${className}`}>
-        <span className="text-xl sm:text-2xl font-bold text-black">+</span>
-        <span className="text-sm sm:text-base md:text-lg">{children}</span>
+        <span className="text-xl sm:text-2xl font-bold text-[#54c5cf]">+</span>
+        <span className="text-sm sm:text-base md:text-lg text-gray-800 font-medium">
+            {children}
+        </span>
     </div>
 );
 
@@ -49,13 +51,13 @@ const ProductSection = ({
                     <Image
                         src={imageUrl}
                         alt={title}
-                        width={400}
-                        height={400}
-                        className="object-contain rounded-lg max-w-[85%] sm:max-w-[75%] md:max-w-[90%]"
+                        width={500}
+                        height={500}
+                        className="object-contain rounded-lg max-w-[90%] sm:max-w-[85%] md:max-w-[95%]"
                     />
                 </div>
             </div>
-            <div className="w-full md:w-1/2 flex flex-col justify-center p-4 md:p-8">
+            <div className="w-full md:w-1/2 flex flex-col justify-center p-4 md:p-8 bg-transparent">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -63,10 +65,10 @@ const ProductSection = ({
                     viewport={{ once: true }}
                     className="max-w-xl mx-auto"
                 >
-                    <div className="text-[#54c5cf] text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-8">
+                    <div className="text-[#54c5cf] text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 font-bold">
                         <h2>{title}</h2>
                     </div>
-                    <div className="space-y-0.5 sm:space-y-1">
+                    <div className="space-y-1 sm:space-y-2 p-3 rounded-lg">
                         {features.map((feature, index) => (
                             <ProductFeature key={index}>
                                 {feature}
@@ -76,8 +78,8 @@ const ProductSection = ({
 
                     {showProtocols && (
                         <div className="mt-6 sm:mt-10">
-                            <div className="bg-[#f5f5f5] rounded-xl p-4 sm:p-6">
-                                <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
+                            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 shadow-sm border border-[#54c5cf]/10">
+                                <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-[#54c5cf]">
                                     Desteklenen Protokoller
                                 </h4>
                                 <div className="flex flex-wrap justify-center items-center">
@@ -143,13 +145,13 @@ const Products = () => {
     ];
 
     return (
-        <div className="w-full flex flex-col py-12 sm:py-16 bg-[#fafafa]">
+        <div className="w-full flex flex-col py-12 sm:py-16 bg-gradient-to-b from-[#fafafa] to-[#f0f4ff]">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="text-center mb-10 sm:mb-16">
                     <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 sm:mb-6 text-[#54c5cf]">
-                        Ürünlerimiz
+                        Ensi Home Ana Bileşenleri
                     </h2>
-                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-4 sm:mb-8 px-4">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-4 sm:mb-8 px-4">
                         Ensi ürün ailesi ile evinizi konuşarak yönetin
                     </p>
                 </div>

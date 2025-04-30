@@ -61,12 +61,28 @@ export function NavHeader() {
         {
             id: "ensi-home",
             label: "Ensi Home",
-            icon: <Mic className="h-4 w-4 sm:h-5 sm:w-5" />,
+            icon: (
+                <Image
+                    src="/branding/ensi/logo.png"
+                    alt="Ensi Logo"
+                    width={20}
+                    height={20}
+                    className="h-4 w-4 sm:h-5 sm:w-5 object-contain"
+                />
+            ),
         },
         {
             id: "ema",
             label: "EMA",
-            icon: <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />,
+            icon: (
+                <Image
+                    src="/branding/ema/logo.png"
+                    alt="EMA Logo"
+                    width={20}
+                    height={20}
+                    className="h-4 w-4 sm:h-5 sm:w-5 object-contain"
+                />
+            ),
         },
     ];
 
