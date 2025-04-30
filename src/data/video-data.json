@@ -1,0 +1,47 @@
+[
+  {
+    "name_video": "How to Get Started with YC",
+    "description_video": "A guide for first-time founders on applying to Y Combinator",
+    "related_categories": ["Applying to YC", "Getting Started", "Founder Stories"],
+    "page_url": "/video/how-to-get-started-with-yc",
+    "youtube_url": "https://www.youtube.com/watch?v=example1",
+    "mp3_file": "how-to-get-started-with-yc.mp3",
+    "mp3_content": "In this video, we'll cover the basics of applying to Y Combinator. First, you need to understand what YC is looking for in startups. They value determined founders who are building something people want. Your application should clearly explain your idea, team dynamics, and traction so far. Be concise but thorough in your responses. Highlight your unique insights about the market and why your team is well-positioned to solve this problem. Remember that YC partners review thousands of applications, so clarity is essential..."
+  },
+  {
+    "name_video": "Talking to Users: The Right Questions to Ask",
+    "description_video": "Learn how to conduct effective user interviews to validate your product",
+    "related_categories": ["Talking to Users", "Product", "Building Product"],
+    "page_url": "/video/talking-to-users",
+    "youtube_url": "https://www.youtube.com/watch?v=example2",
+    "mp3_file": "talking-to-users.mp3",
+    "mp3_content": "When talking to users, it's important to ask open-ended questions that don't lead them to a specific answer. Instead of asking 'Would you use this product?', ask 'What's the hardest part about solving this problem today?' This gives you insights into their actual needs rather than hypothetical interest. Another key approach is to ask about past behavior rather than future intentions. 'How did you last try to solve this problem?' is much more valuable than 'Would you pay for this solution?' Remember, the goal is to understand their problems deeply, not to validate your solution..."
+  },
+  {
+    "name_video": "How to Build an MVP",
+    "description_video": "Guidelines for building a minimum viable product that gets traction",
+    "related_categories": ["MVP", "Building Product", "Product"],
+    "page_url": "/video/how-to-build-an-mvp",
+    "youtube_url": "https://www.youtube.com/watch?v=example3",
+    "mp3_file": "how-to-build-an-mvp.mp3",
+    "mp3_content": "Building an MVP isn't about creating a smaller version of your final product with fewer features. It's about finding the simplest solution that solves the core problem for your users. Start by defining the one key problem you're solving and build only what's necessary to address that problem. Don't worry about scalability, perfect design, or comprehensive features at this stage. The goal is to get something into users' hands as quickly as possible so you can start learning. Remember that most successful startups began with something much simpler than what they eventually became..."
+  },
+  {
+    "name_video": "Startup Fundraising Essentials",
+    "description_video": "Everything founders need to know about raising capital effectively",
+    "related_categories": ["Fundraising", "Pitch Deck", "Investors"],
+    "page_url": "/video/startup-fundraising-essentials",
+    "youtube_url": "https://www.youtube.com/watch?v=example4",
+    "mp3_file": "startup-fundraising-essentials.mp3",
+    "mp3_content": "Fundraising is a necessary evil for most startups, but it shouldn't distract you from building your product. When raising money, focus on telling a compelling story about your vision and demonstrating traction. Your pitch should clearly articulate the problem, your solution, market size, and why your team is uniquely positioned to succeed. Prepare for due diligence by having your metrics, financial projections, and legal documents in order. Be strategic about who you approach - look for investors who have funded similar companies or have expertise in your industry..."
+  },
+  {
+    "name_video": "Building a Strong Startup Culture",
+    "description_video": "How to establish company values and culture from day one",
+    "related_categories": ["Culture", "Leadership", "Management"],
+    "page_url": "/video/building-strong-startup-culture",
+    "youtube_url": "https://www.youtube.com/watch?v=example5",
+    "mp3_file": "building-strong-startup-culture.mp3",
+    "mp3_content": "Company culture isn't about free snacks or ping pong tables - it's about the values and behaviors that define how your team works together. As a founder, culture starts with you and the examples you set. Be intentional about defining your company values early and hire people who align with those values. Create systems that reinforce the culture you want to build, whether it's through regular feedback, transparent communication, or recognition programs. Remember that culture isn't static - it needs to evolve as your company grows..."
+  }
+] 

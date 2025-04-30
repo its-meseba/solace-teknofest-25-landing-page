@@ -1,0 +1,55 @@
+{
+    "name": "Solace",
+    "short_name": "Solace",
+    "description": "Solace, insanla teknolojiyi aynı dili konuşur hale getiren konuşma temelli yapay zekâ çözümleri sunar.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f5f5ee",
+    "theme_color": "#E53935",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Hakkımızda",
+            "short_name": "Hakkımızda",
+            "description": "Solace hakkında bilgi edinin",
+            "url": "/about",
+            "icons": [
+                {
+                    "src": "/logo.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "İletişim",
+            "short_name": "İletişim",
+            "description": "Bizimle iletişime geçin",
+            "url": "/contact",
+            "icons": [
+                {
+                    "src": "/logo.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ],
+    "categories": [
+        "technology",
+        "artificial-intelligence",
+        "business"
+    ]
+}

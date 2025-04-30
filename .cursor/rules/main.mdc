@@ -1,0 +1,65 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Solace Teknoloji - Teknofest KIBRIS 2025 
+
+Bu websitesi teknofest.solace.com.tr olarak hazırlanmıştır.
+Bu proje bir tanıtım websitesi. AMACIMIZ teknofest etkinligi vesilesiyle halka guzel bir temel tanitim web sitesi sunkmak. Yalin, sade,
+yapilan seylerin ozlerinin ifade edildigi bir durum var 
+
+1. Solace [EMA-information.md]
+2. Ensi Home () [ENSI-HOME-information.mdc]
+3. EMA (Etkileşimli Müşteri Asistanı) [EMA-information.mdc]
+
+Story brand 7 script kullanılarak bu websitesinde 3 aşama olacak. TUM BILGILER BU TEK SAYFADA VERILECEK. BASKA BIR BILGI OLMAYACAK.
+1. Solace kısmıyla kurgulanmış ilk ekran, ve tagline
+2. Ensi Home ile ilgili temel bilgiler ve resimler (Ensi Home Voice Assistant, Ensi Home Mobile Application ve Ensi Home Box)
+3. EMA (Etkileşimli Müşteri Asistanı) Avatar ve Voice temelli kısımların anlatımı ve resimleri.
+
+Alakali bilgileri .cursor/rules/ altında bulabilirsin. 
+
+EMA-information.
+
+
+Solace marka rengi: 
+
+- primary: #2f318b
+- secondary: #4da9e7
+
+Ensi Home marka rengi:
+
+- primary: #54c5cf
+- secondary: #FFFFFF
+
+EMA marka renki:
+
+- primary: #48affd
+- secondary: #fcfaf8
+
+
+ALL THE BACKGROUND COLOR: #fcfaf8
+
+(ekran ekran ifade edilen tum web sitesi, buradaki verileri .cursor/rules/ dosyasi icerisindeki alakali yerlerden elde edebilirsin.)
+
+1. Solace KISMI:
+
+yalnizca tagline koy, ilk acilista tek ekran olsun. Logoyu da koy uygun bir yere. Logo location /(public)/branding/solace/logo.svg
+
+2. asagi kaydirinca Ensi Home gelsin, Ensi Home Title olacak. Logo location /(public)/branding/ensi/logo.svg
+ilk kisimda 3 resim ve altlarinda ne olduklarini ifade eden sub titlelar var,
+Solda ensi voice assistant, ortada ensi home box, sagda ensi mobile application
+
+3. bir ekran altinda ise Ensi Home anlatiliyor, tagline, ve kisaca 3 alt yapi tasi olan Box, Voice Assistant ve Mobile Application.
+
+4. EMA (etkilesimli musteri asistani), tagline koy, bir resim koy. Logo location /(public)/ema/logo.svg
+
+5. EMA nedir, ne ise yarar, bunlari ifade et.
+
+
+IMAGES LOCATION FOR 3 of those, for Solace, Ensi Home, EMA (for the missing ones, still use them, I will upload them later.)
+
+1. /images/solace/
+2. /images/ensi/
+3. /images/ema/

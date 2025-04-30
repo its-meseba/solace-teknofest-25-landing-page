@@ -1,0 +1,77 @@
+---
+description: The client web app of octarcus
+globs: client/*
+alwaysApply: false
+---
+Ensi – StoryBrand 7 Script
+1. Bir Kahraman – Kullanıcı
+Kahramanımız, teknolojiden korkmayan ama onunla uğraşmak da istemeyen bir ev sahibi.
+O, konforu, hızlı erişimi ve doğal bir yaşam deneyimini arıyor.
+
+“Evde bir düğmeye basmadan, hiçbir menü gezmeden hayatımı kolaylaştırmak istiyorum.”
+
+2. Bir Sorunla Karşılaşır – Problem
+Dış Problem:
+Mevcut akıllı ev sistemleri karmaşık. Panel mi uygulama mı derken kullanıcı yoruluyor.
+“Telefonu al, uygulamayı aç, menüye gir...” Zaten ışığı kendim de kapatırdım!
+
+İç Problem:
+Kullanıcı kendini teknolojinin hizmetkârı gibi hissediyor.
+
+“Ben teknolojiye değil, teknoloji bana uysun istiyorum.”
+
+Felsefi Problem:
+Her birey, doğal yollarla evini kontrol edebilme hakkına sahiptir.
+
+“Teknoloji konuştuğumu anlamıyorsa, kimin için var?”
+
+3. Bir Rehberle Tanışır – Ensi
+Ensi, evinizi sadece dinlemez, sizi anlar.
+Wake-word ile aktifleşen ve bağlamsal zekâyla donatılmış bu sistem, yalnızca komutları değil, niyetinizi algılar.
+
+✅ Empati: “Ev seninle konuşmayı öğrendi.”
+✅ Yetkinlik: Çoklu protokol (KNX, Zigbee, Matter), yerli wake-word motoru, enerji verimliliği, çevrimdışı çalışabilme...
+
+4. Ona Bir Plan Sunar – Plan
+Basit Plan:
+Ensi kurulumu yapılır.
+
+Siz sadece konuşursunuz.
+
+Ensi, söylediklerinizi anlar, yapar, öğrenir.
+
+Güven Planı:
+– Teknik bilgi gerektirmez.
+– Her yaş grubuna uygundur.
+– Verileriniz evinizde kalır.
+
+5. Harekete Çağırır – Call to Action
+🎯 Şimdi deneyin: Teknofest standımıza gelin, Ensi’yle birebir konuşun.
+🎯 Demo kurulum talep edin, teknolojinin sizin için çalıştığını görün.
+
+“Konuşun. Ensi anlasın. Ev harekete geçsin.”
+
+6. Başarısızlık – Kaçınmak İstediği Sonuç
+❌ Panel ararken ışığı açmayı unutmak...
+❌ Uygulama içinde kaybolmak...
+❌ Evde teknoloji olmasına rağmen hâlâ kalkmak zorunda olmak...
+
+7. Başarı – Başarılı Sonuç
+✔️ Eller serbest, hayat özgür.
+✔️ Eviniz artık sizi anlıyor, sizinle yaşıyor.
+✔️ Her şeyin merkezinde siz varsınız.
+
+Ensi ile eviniz artık sizi konuşuyor.
+
+🪧 Slogan (Tagline) Önerileri
+Ana Slogan:
+🟩 “Eviniz sizi anlasın.”
+🟩 “Teknolojiyi konuşarak kullanın.”
+🟩 “Ensi ile eviniz, yaşayan bir zeka.”
+
+Alternatif ve Destekleyici Sloganlar:
+– “Konuş, evin seni anlasın.”
+– “Yapay zekâ değil, anlayan zekâ.”
+– “Ev artık sadece barınak değil, bir dost.”
+– “Evinizle konuşun, ekranlara veda edin.”
+– “Ensi ile hayat sesinizde.”
