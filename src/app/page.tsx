@@ -85,6 +85,8 @@ export default function HomePage() {
     const emaRef = useRef<HTMLDivElement>(null);
     const productsRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
+    const avatarRef = useRef<HTMLDivElement>(null);
+    const voiceRef = useRef<HTMLDivElement>(null);
 
     // Check if sections are in view
     const isSolaceInView = useInView(solaceRef, { once: true, amount: 0.3 });
@@ -101,6 +103,8 @@ export default function HomePage() {
         once: true,
         amount: 0.3,
     });
+    const isAvatarInView = useInView(avatarRef, { once: true, amount: 0.3 });
+    const isVoiceInView = useInView(voiceRef, { once: true, amount: 0.3 });
 
     // Function to scroll to next section
     const scrollToNextSection = (currentSection: string) => {
@@ -110,7 +114,11 @@ export default function HomePage() {
             productsRef.current.scrollIntoView({ behavior: "smooth" });
         } else if (currentSection === "products" && emaRef.current) {
             emaRef.current.scrollIntoView({ behavior: "smooth" });
-        } else if (currentSection === "ema" && contactRef.current) {
+        } else if (currentSection === "ema" && avatarRef.current) {
+            avatarRef.current.scrollIntoView({ behavior: "smooth" });
+        } else if (currentSection === "avatar-assistant" && voiceRef.current) {
+            voiceRef.current.scrollIntoView({ behavior: "smooth" });
+        } else if (currentSection === "voice-assistant" && contactRef.current) {
             contactRef.current.scrollIntoView({ behavior: "smooth" });
         }
     };
@@ -515,7 +523,7 @@ export default function HomePage() {
             <section
                 id="ema"
                 ref={emaRef}
-                className="min-h-screen py-16 md:py-24 px-4 md:px-8 lg:px-16 flex flex-col"
+                className="min-h-[100vh] py-20 md:py-28 px-4 md:px-8 lg:px-16 flex flex-col"
                 style={{
                     background: `linear-gradient(to bottom, ${BRAND_COLORS.light}, ${BRAND_COLORS.secondary}10)`,
                     boxShadow: "inset 0 2px 10px rgba(0,0,0,0.03)",
@@ -525,7 +533,7 @@ export default function HomePage() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={isEmaInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-12 sm:mb-16"
+                    className="text-center mb-16 sm:mb-20"
                 >
                     <div className="flex justify-center mb-6 sm:mb-8">
                         <motion.div
@@ -551,13 +559,13 @@ export default function HomePage() {
                         </h2>
                     </div>
                     <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8 px-4 leading-relaxed">
-                        Etkileşimli Müşteri Asistanı ile müşteriler konuştuğunu
-                        anlayan bir teknolojiyle buluşuyor.
+                        Etkileşimli Müşteri Asistanı ile müşterileriniz
+                        konuştuğunu anlayan bir teknolojiyle buluşuyor.
                     </p>
                 </motion.div>
 
                 <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto bg-white rounded-2xl p-8 shadow-md border border-[#48affd]/10"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto bg-white rounded-2xl p-8 md:p-10 shadow-md border border-[#48affd]/10"
                     initial={{ opacity: 0, y: 20 }}
                     animate={isEmaInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -603,7 +611,7 @@ export default function HomePage() {
                                     ),
                                     title: "5 Dil Desteği",
                                     description:
-                                        "Müşteriler kendi dillerinde destek alabilir ve bilgi edinebilir",
+                                        "Müşterileriniz kendi dillerinde destek alabilir ve bilgi edinebilir",
                                 },
                                 {
                                     icon: (
@@ -668,19 +676,572 @@ export default function HomePage() {
                             Her konuşma bir fırsattır. EMA ile satış
                             potansiyelinizi maksimuma çıkarın.
                         </p>
-                        <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <Button
-                                className="bg-[#48affd] hover:bg-[#48affd]/90 text-white px-8 py-6 h-auto text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
-                                onClick={() => scrollToNextSection("ema")}
-                            >
-                                Teknofest Standımızda Deneyin
-                            </Button>
-                        </motion.div>
                     </motion.div>
                 </motion.div>
+            </section>
+
+            {/* Avatar Assistant Mode Section */}
+            <section
+                id="avatar-assistant"
+                ref={avatarRef}
+                className="min-h-[120vh] py-20 md:py-28 px-4 md:px-8 lg:px-16 flex flex-col"
+                style={{
+                    background: `linear-gradient(to bottom, ${BRAND_COLORS.secondary}10, ${BRAND_COLORS.highlight}05)`,
+                    boxShadow: "inset 0 2px 10px rgba(0,0,0,0.03)",
+                }}
+            >
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isAvatarInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-16 sm:mb-20"
+                >
+                    <div className="flex items-center justify-center relative">
+                        <span className="absolute -left-4 sm:-left-6 md:-left-12 text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-[#48affd]/40 transform -translate-y-1/4">
+                            2.1.
+                        </span>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#48affd] relative z-10">
+                            Avatar Asistan Modu
+                        </h2>
+                    </div>
+                    <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8 px-4 leading-relaxed">
+                        Görsel etkileşimli arayüz ile müşterilerinize daha
+                        kişisel bir deneyim sunun.
+                    </p>
+                </motion.div>
+
+                {/* First part - Avatar Introduction */}
+                <motion.div
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 max-w-6xl mx-auto mb-20 md:mb-28"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isAvatarInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={isAvatarInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="flex flex-col justify-center order-2 lg:order-1 h-full"
+                    >
+                        <h3 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 text-[#48affd]">
+                            Görsel Etkileşimli Asistan
+                        </h3>
+
+                        <div className="space-y-6 sm:space-y-8">
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#48affd]/10 p-3 text-[#48affd] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#48affd]/20 transition-colors duration-300">
+                                    <Heart className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Kişiselleştirilmiş Deneyim
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Müşterilerinize görsel bir asistan ile
+                                        daha sıcak ve kişisel bir deneyim sunun
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#48affd]/10 p-3 text-[#48affd] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#48affd]/20 transition-colors duration-300">
+                                    <Brain className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Akıllı Yüz İfadesi Tanıma
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Müşterilerinizin yüz ifadelerini analiz
+                                        ederek daha doğru ve kişiselleştirilmiş
+                                        yanıtlar sunar
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#48affd]/10 p-3 text-[#48affd] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#48affd]/20 transition-colors duration-300">
+                                    <Users className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Müşteri Bağlılığını Artırır
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Etkileşimli görsel iletişim ile
+                                        müşterilerinizin marka bağlılığını ve
+                                        memnuniyetini artırın
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#48affd]/10 p-3 text-[#48affd] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#48affd]/20 transition-colors duration-300">
+                                    <Lightbulb className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Sezgisel Anlama
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Müşteri davranışlarını analiz ederek
+                                        ihtiyaçları önceden tahmin edebilen
+                                        yapay zeka
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={isAvatarInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="flex items-center justify-center order-1 lg:order-2 h-full min-h-[400px] md:min-h-[500px]"
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        <Image
+                            src="/images/ema/avatar/first-intro.png"
+                            alt="EMA Avatar Assistant"
+                            width={600}
+                            height={600}
+                            className="object-contain w-auto h-auto max-h-[600px] drop-shadow-2xl rounded-lg"
+                        />
+                    </motion.div>
+                </motion.div>
+
+                {/* Second part - Avatar with App Integration */}
+                <motion.div
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 max-w-6xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isAvatarInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={isAvatarInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="flex items-center justify-center order-1 h-full min-h-[400px] md:min-h-[500px]"
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        <Image
+                            src="/images/ema/avatar/second-with-app.png"
+                            alt="EMA Avatar with App Integration"
+                            width={600}
+                            height={600}
+                            className="object-contain w-auto h-auto max-h-[600px] drop-shadow-2xl rounded-lg"
+                        />
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={isAvatarInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="flex flex-col justify-center order-2 h-full"
+                    >
+                        <h3 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 text-[#48affd]">
+                            Uygulama Entegrasyonu
+                        </h3>
+
+                        <div className="space-y-6 sm:space-y-8">
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#48affd]/10 p-3 text-[#48affd] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#48affd]/20 transition-colors duration-300">
+                                    <Zap className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Kolay Entegrasyon
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Mevcut sistemlerinize kolayca entegre
+                                        edilebilen API yapısı ile hızlı kurulum
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#48affd]/10 p-3 text-[#48affd] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#48affd]/20 transition-colors duration-300">
+                                    <Rocket className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Çoklu Platform Desteği
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Web, mobil ve kiosk uygulamalarına
+                                        sorunsuz entegrasyon sağlayan çok yönlü
+                                        altyapı
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#48affd]/10 p-3 text-[#48affd] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#48affd]/20 transition-colors duration-300">
+                                    <Shield className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Güvenli Veri Yönetimi
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Müşteri verilerini KVKK ve GDPR uyumlu
+                                        olarak saklayan gelişmiş güvenlik
+                                        altyapısı
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#48affd]/10 p-3 text-[#48affd] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#48affd]/20 transition-colors duration-300">
+                                    <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Çok Kanallı İletişim
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Aynı müşteri ile farklı kanallardan
+                                        devam eden kesintisiz iletişim deneyimi
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                </motion.div>
+            </section>
+
+            {/* Voice Assistant Section */}
+            <section
+                id="voice-assistant"
+                ref={voiceRef}
+                className="min-h-[120vh] py-20 md:py-28 px-4 md:px-8 lg:px-16 flex flex-col"
+                style={{
+                    background: `linear-gradient(to bottom, ${BRAND_COLORS.highlight}05, ${BRAND_COLORS.light})`,
+                    boxShadow: "inset 0 2px 10px rgba(0,0,0,0.03)",
+                }}
+            >
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isVoiceInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-16 sm:mb-20"
+                >
+                    <div className="flex items-center justify-center relative">
+                        <span className="absolute -left-4 sm:-left-6 md:-left-12 text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-[#f05a28]/40 transform -translate-y-1/4">
+                            2.2.
+                        </span>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#f05a28] relative z-10">
+                            Ses Asistanı Modu
+                        </h2>
+                    </div>
+                    <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8 px-4 leading-relaxed">
+                        Mağazanızda sadece ses ile etkileşimli yardım almak
+                        isteyen müşterileriniz için ideal çözüm.
+                    </p>
+                </motion.div>
+
+                <motion.div
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 max-w-6xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isVoiceInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={isVoiceInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="flex flex-col justify-center order-2 lg:order-1 h-full"
+                    >
+                        <h3 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 text-[#f05a28]">
+                            Ses Bazlı Asistan
+                        </h3>
+
+                        <div className="space-y-6 sm:space-y-8">
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#f05a28]/10 p-3 text-[#f05a28] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#f05a28]/20 transition-colors duration-300">
+                                    <Mic className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Gelişmiş Ses Tanıma
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Gürültülü ortamlarda bile yüksek
+                                        doğrulukla sesi algılayan ileri
+                                        teknoloji
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#f05a28]/10 p-3 text-[#f05a28] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#f05a28]/20 transition-colors duration-300">
+                                    <Globe className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Çoklu Dil Desteği
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Türkçe, İngilizce, Almanca, Fransızca ve
+                                        İspanyolca olmak üzere 5 farklı dilde
+                                        kesintisiz iletişim
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#f05a28]/10 p-3 text-[#f05a28] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#f05a28]/20 transition-colors duration-300">
+                                    <Lightbulb className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Akıllı Cevaplama
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Yapay zeka ile güçlendirilmiş, doğal ve
+                                        anlaşılır tonlamalarla sesli yanıtlar
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#f05a28]/10 p-3 text-[#f05a28] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#f05a28]/20 transition-colors duration-300">
+                                    <Zap className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Hızlı Tepki Süresi
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Yerli altyapı sayesinde bulut bağımsız,
+                                        milisaniyeler içinde yanıt veren
+                                        teknoloji
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex gap-4 group"
+                                whileHover={{ x: 5 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <div className="rounded-full bg-[#f05a28]/10 p-3 text-[#f05a28] h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#f05a28]/20 transition-colors duration-300">
+                                    <Users className="h-6 w-6 sm:h-7 sm:w-7" />
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold mb-1 text-base sm:text-lg text-gray-900">
+                                        Erişilebilirlik
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-700">
+                                        Görme engelli müşteriler dahil herkesin
+                                        kolayca kullanabileceği kapsayıcı
+                                        tasarım
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={isVoiceInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="flex items-center justify-center order-1 lg:order-2 h-full min-h-[400px] md:min-h-[500px]"
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        <Image
+                            src="/images/ema/voice/first-intro.png"
+                            alt="EMA Voice Assistant"
+                            width={600}
+                            height={600}
+                            className="object-contain w-auto h-auto max-h-[600px] drop-shadow-2xl rounded-lg"
+                        />
+                    </motion.div>
+                </motion.div>
+            </section>
+
+            {/* Contact section */}
+            <section
+                id="contact"
+                ref={contactRef}
+                className="min-h-screen py-16 md:py-24 px-4 md:px-8 lg:px-16 flex flex-col items-center justify-center relative"
+            >
+                {/* Contact form content */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isContactInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-12 sm:mb-16"
+                >
+                    <div className="flex items-center justify-center relative">
+                        <span className="absolute -left-4 sm:-left-6 md:-left-12 text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-[#2f318b]/20 transform -translate-y-1/4">
+                            3.
+                        </span>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#2f318b] relative z-10">
+                            İletişim
+                        </h2>
+                    </div>
+                    <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8 px-4 leading-relaxed">
+                        Ürünlerimiz hakkında daha fazla bilgi almak için bizimle
+                        iletişime geçin.
+                    </p>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isContactInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="max-w-2xl w-full mx-auto bg-white p-8 sm:p-10 rounded-2xl shadow-lg border border-[#2f318b]/10"
+                    style={{
+                        backgroundImage: `radial-gradient(circle at 70% 30%, ${BRAND_COLORS.primary}05, transparent 70%)`,
+                    }}
+                >
+                    <div className="text-center mb-8">
+                        <h3 className="text-xl sm:text-2xl font-semibold text-[#2f318b] mb-4">
+                            Hemen Bize Ulaşın
+                        </h3>
+                        <p className="text-gray-700">
+                            Teknofest standımızda demolarımızı deneyimleyebilir
+                            veya aşağıdaki iletişim bilgilerimizden bize
+                            ulaşabilirsiniz.
+                        </p>
+                    </div>
+
+                    <div className="space-y-6">
+                        <div className="flex items-center gap-4 p-4 rounded-lg bg-[#2f318b]/5 hover:bg-[#2f318b]/10 transition-colors duration-300">
+                            <Mail className="h-6 w-6 text-[#2f318b]" />
+                            <div>
+                                <p className="font-medium text-gray-900">
+                                    E-posta
+                                </p>
+                                <p className="text-gray-700 flex items-center gap-2 mt-1">
+                                    solace@solace.com.tr
+                                    <button
+                                        onClick={copyEmailToClipboard}
+                                        className="text-[#2f318b] hover:text-[#2f318b]/80 transition-colors"
+                                        aria-label="E-posta adresini kopyala"
+                                    >
+                                        {hasCopied ? (
+                                            <Check className="h-4 w-4" />
+                                        ) : (
+                                            <Copy className="h-4 w-4" />
+                                        )}
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <motion.div
+                                whileHover={{ y: -5 }}
+                                transition={{ duration: 0.3 }}
+                                className="w-full"
+                            >
+                                <Button
+                                    onClick={openEmailClient}
+                                    className="w-full bg-[#2f318b] hover:bg-[#2f318b]/90 text-white px-4 py-6 h-auto text-base rounded-lg flex items-center justify-center gap-2 shadow-md"
+                                >
+                                    <Mail className="h-5 w-5" />
+                                    E-posta Gönder
+                                </Button>
+                            </motion.div>
+
+                            <motion.div
+                                whileHover={{ y: -5 }}
+                                transition={{ duration: 0.3 }}
+                                className="w-full"
+                            >
+                                <Link
+                                    href="https://www.solace.com.tr"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <Button className="w-full bg-white text-[#2f318b] border border-[#2f318b] hover:bg-[#2f318b]/5 px-4 py-6 h-auto text-base rounded-lg flex items-center justify-center gap-2 shadow-sm">
+                                        <ExternalLink className="h-5 w-5" />
+                                        Web Sitemizi Ziyaret Edin
+                                    </Button>
+                                </Link>
+                            </motion.div>
+                        </div>
+                    </div>
+                </motion.div>
+
+                <div className="absolute -z-10 inset-0 overflow-hidden">
+                    <motion.div
+                        className="absolute w-[30rem] h-[30rem] rounded-full bottom-[-10rem] right-[-15rem] bg-gradient-to-t from-[#2f318b]/10 to-transparent blur-3xl"
+                        animate={{
+                            scale: [1, 1.1, 1],
+                            opacity: [0.3, 0.5, 0.3],
+                        }}
+                        transition={{
+                            duration: 10,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                        }}
+                    />
+                    <motion.div
+                        className="absolute w-[25rem] h-[25rem] rounded-full top-[-5rem] left-[-10rem] bg-gradient-to-b from-[#2f318b]/10 to-transparent blur-3xl"
+                        animate={{
+                            scale: [1, 1.15, 1],
+                            opacity: [0.2, 0.4, 0.2],
+                        }}
+                        transition={{
+                            duration: 12,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                            delay: 1,
+                        }}
+                    />
+                </div>
             </section>
         </div>
     );
