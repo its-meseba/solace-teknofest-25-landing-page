@@ -260,22 +260,6 @@ export function NavHeader() {
                                     </motion.div>
                                 </div>
                             </div>
-
-                            {/* Footer with brand info */}
-                            <div className="mt-auto border-t px-4 py-4 sm:py-6">
-                                <div className="flex flex-col gap-2">
-                                    <div className="flex items-center opacity-80">
-                                        <div className="text-sm text-muted-foreground">
-                                            <p className="mb-1 text-xs uppercase text-muted-foreground font-medium tracking-wide">
-                                                Solace Teknoloji
-                                            </p>
-                                            <p className="text-xs sm:text-sm text-muted-foreground">
-                                                Teknofest KIBRIS 2025
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </SheetContent>
                     </Sheet>
                 </div>
