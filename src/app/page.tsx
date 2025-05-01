@@ -308,7 +308,7 @@ export default function HomePage() {
             <section
                 id="ensi-home"
                 ref={ensiHomeRef}
-                className="min-h-screen py-16 md:py-24 px-4 md:px-8 lg:px-16 flex flex-col"
+                className="py-12 px-4 md:py-24 md:px-8 lg:px-16 flex flex-col"
                 style={{
                     background: `linear-gradient(to bottom, ${BRAND_COLORS.light}, ${BRAND_COLORS.accent}10)`,
                     boxShadow: "inset 0 2px 10px rgba(0,0,0,0.03)",
@@ -318,9 +318,9 @@ export default function HomePage() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={isEnsiHomeInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-12 sm:mb-20"
+                    className="text-center mb-8 sm:mb-12 md:mb-20"
                 >
-                    <div className="flex justify-center mb-6 sm:mb-8">
+                    <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.3 }}
@@ -328,29 +328,29 @@ export default function HomePage() {
                             <Image
                                 src="/branding/ensi/logo.png"
                                 alt="Ensi Home Logo"
-                                width={160}
-                                height={55}
-                                className="w-auto h-auto"
+                                width={120}
+                                height={40}
+                                className="w-auto h-auto max-w-[120px] md:max-w-none"
                             />
                         </motion.div>
                     </div>
 
                     <div className="flex items-center justify-center relative">
-                        <span className="absolute -left-4 sm:-left-6 md:-left-12 text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-[#54c5cf]/40 transform -translate-y-1/4">
+                        <span className="absolute -left-2 sm:-left-4 md:-left-8 lg:-left-12 text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-[#54c5cf]/40 transform -translate-y-1/4">
                             1.
                         </span>
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#54c5cf] relative z-10">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-4 md:mb-6 text-[#54c5cf] relative z-10 pl-5 sm:pl-8 md:pl-0">
                             Eviniz sizi anlasın
                         </h2>
                     </div>
-                    <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8 px-4 leading-relaxed">
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto mb-6 md:mb-8 px-2 md:px-4 leading-relaxed">
                         Ensi ile eviniz artık sizi anlıyor. Teknolojiyi
                         konuşarak kullanın.
                     </p>
                 </motion.div>
 
                 {/* Product showcases - redesigned with enhanced styling and animations */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-[95%] mx-auto mb-16 md:mb-24">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-[95%] mx-auto mb-12 md:mb-16 lg:mb-24">
                     {/* Ensi Box */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -358,14 +358,14 @@ export default function HomePage() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="flex flex-col items-start"
                     >
-                        <div className="text-[#54c5cf] mb-2 sm:mb-3 text-3xl sm:text-4xl font-light">
+                        <div className="text-[#54c5cf] mb-1 sm:mb-2 text-2xl sm:text-3xl md:text-4xl font-light">
                             +
                         </div>
-                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black mb-4 sm:mb-8">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-black mb-3 sm:mb-4 md:mb-6">
                             Ensi Box
                         </h3>
                         <motion.div
-                            className="bg-white rounded-lg w-full h-[300px] sm:h-[350px] md:h-[450px] flex items-center justify-center p-4 shadow-md hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group"
+                            className="bg-white rounded-lg w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[450px] flex items-center justify-center p-3 sm:p-4 shadow-md hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group"
                             whileHover={{ y: -5 }}
                             transition={{ duration: 0.3 }}
                         >
@@ -373,9 +373,9 @@ export default function HomePage() {
                             <Image
                                 src="/images/ensi/home-box.png"
                                 alt="Ensi Box"
-                                width={600}
-                                height={600}
-                                className="object-contain max-h-full transition-transform duration-300 group-hover:scale-105"
+                                width={500}
+                                height={500}
+                                className="object-contain w-auto h-auto max-h-[230px] sm:max-h-[280px] md:max-h-[330px] lg:max-h-[430px] transition-transform duration-300 group-hover:scale-105"
                             />
                         </motion.div>
                     </motion.div>
@@ -387,14 +387,14 @@ export default function HomePage() {
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="flex flex-col items-start"
                     >
-                        <div className="text-[#54c5cf] mb-2 sm:mb-3 text-3xl sm:text-4xl font-light">
+                        <div className="text-[#54c5cf] mb-1 sm:mb-2 text-2xl sm:text-3xl md:text-4xl font-light">
                             +
                         </div>
-                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black mb-4 sm:mb-8">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-black mb-3 sm:mb-4 md:mb-6">
                             Ensi Voice Assistant
                         </h3>
                         <motion.div
-                            className="bg-white rounded-lg w-full h-[300px] sm:h-[350px] md:h-[450px] flex items-center justify-center p-4 shadow-md hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group"
+                            className="bg-white rounded-lg w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[450px] flex items-center justify-center p-3 sm:p-4 shadow-md hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group"
                             whileHover={{ y: -5 }}
                             transition={{ duration: 0.3 }}
                         >
@@ -402,9 +402,9 @@ export default function HomePage() {
                             <Image
                                 src="/images/ensi/voice-assistant.jpg"
                                 alt="Ensi Voice Assistant"
-                                width={600}
-                                height={600}
-                                className="object-contain max-h-full transition-transform duration-300 group-hover:scale-105"
+                                width={500}
+                                height={500}
+                                className="object-contain w-auto h-auto max-h-[230px] sm:max-h-[280px] md:max-h-[330px] lg:max-h-[430px] transition-transform duration-300 group-hover:scale-105"
                             />
                         </motion.div>
                     </motion.div>
@@ -414,16 +414,16 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={isEnsiHomeInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="flex flex-col items-start sm:col-span-2 md:col-span-1 mx-auto md:mx-0 max-w-sm sm:max-w-none"
+                        className="flex flex-col items-start mx-auto w-full"
                     >
-                        <div className="text-[#54c5cf] mb-2 sm:mb-3 text-3xl sm:text-4xl font-light">
+                        <div className="text-[#54c5cf] mb-1 sm:mb-2 text-2xl sm:text-3xl md:text-4xl font-light">
                             +
                         </div>
-                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black mb-4 sm:mb-8">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-black mb-3 sm:mb-4 md:mb-6">
                             Ensi App
                         </h3>
                         <motion.div
-                            className="bg-white rounded-lg w-full h-[300px] sm:h-[350px] md:h-[450px] flex items-center justify-center p-4 shadow-md hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group"
+                            className="bg-white rounded-lg w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[450px] flex items-center justify-center p-3 sm:p-4 shadow-md hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group"
                             whileHover={{ y: -5 }}
                             transition={{ duration: 0.3 }}
                         >
@@ -431,9 +431,9 @@ export default function HomePage() {
                             <Image
                                 src="/images/ensi/mobile-app-mockup.png"
                                 alt="Ensi App"
-                                width={600}
-                                height={600}
-                                className="object-contain max-h-full transition-transform duration-300 group-hover:scale-105"
+                                width={500}
+                                height={500}
+                                className="object-contain w-auto h-auto max-h-[230px] sm:max-h-[280px] md:max-h-[330px] lg:max-h-[430px] transition-transform duration-300 group-hover:scale-105"
                             />
                         </motion.div>
                     </motion.div>
@@ -444,13 +444,13 @@ export default function HomePage() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={isEnsiHomeInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.8 }}
-                    className="mt-16 md:mt-24 max-w-4xl mx-auto"
+                    className="mt-10 md:mt-16 lg:mt-24 max-w-[95%] sm:max-w-4xl mx-auto"
                 >
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                         {[
                             {
                                 icon: (
-                                    <Mic className="h-6 w-6 text-[#54c5cf]" />
+                                    <Mic className="h-5 w-5 sm:h-6 sm:w-6 text-[#54c5cf]" />
                                 ),
                                 title: "Wake-Word Teknolojisi",
                                 description:
@@ -458,7 +458,7 @@ export default function HomePage() {
                             },
                             {
                                 icon: (
-                                    <Home className="h-6 w-6 text-[#54c5cf]" />
+                                    <Home className="h-5 w-5 sm:h-6 sm:w-6 text-[#54c5cf]" />
                                 ),
                                 title: "Çoklu Protokol Desteği",
                                 description:
@@ -466,7 +466,7 @@ export default function HomePage() {
                             },
                             {
                                 icon: (
-                                    <MessageCircle className="h-6 w-6 text-[#54c5cf]" />
+                                    <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-[#54c5cf]" />
                                 ),
                                 title: "Bağlamsal Zeka",
                                 description:
@@ -483,14 +483,14 @@ export default function HomePage() {
                                 transition={{ duration: 0.3 }}
                             >
                                 <Card className="border border-[#54c5cf]/10 bg-white shadow hover:shadow-md transition-shadow duration-300 rounded-xl overflow-hidden group h-full">
-                                    <CardContent className="p-6 sm:p-8 h-full flex flex-col">
-                                        <div className="rounded-full bg-[#54c5cf]/10 p-3 w-12 h-12 flex items-center justify-center mb-4 group-hover:bg-[#54c5cf]/20 transition-colors duration-300">
+                                    <CardContent className="p-4 sm:p-6 md:p-8 h-full flex flex-col">
+                                        <div className="rounded-full bg-[#54c5cf]/10 p-2 sm:p-3 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-[#54c5cf]/20 transition-colors duration-300">
                                             {feature.icon}
                                         </div>
-                                        <h4 className="text-base sm:text-lg font-semibold mb-2 text-gray-900">
+                                        <h4 className="text-sm sm:text-base md:text-lg font-semibold mb-1 sm:mb-2 text-gray-900">
                                             {feature.title}
                                         </h4>
-                                        <p className="text-sm sm:text-base text-gray-700 mt-auto">
+                                        <p className="text-xs sm:text-sm md:text-base text-gray-700 mt-auto">
                                             {feature.description}
                                         </p>
                                     </CardContent>
@@ -515,6 +515,7 @@ export default function HomePage() {
                     </motion.div>
                 </div> */}
             </section>
+
             {/* Products Section with ref and improved visibility for mobile screens */}
             <div ref={productsRef}>
                 <Products />
